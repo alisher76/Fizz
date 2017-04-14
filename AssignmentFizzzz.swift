@@ -1,21 +1,4 @@
-//
-//  AssignmentFizzzz.swift
-//
-//
-//  Created by Alisher Abdukarimov on 3/30/17.
-//
-//
-
 import Foundation
-
-
-
-
-
-
-
-
-
 
 
 enum Answer : Equatable {
@@ -39,64 +22,29 @@ enum Answer : Equatable {
 
 func transform(n: Int) -> Answer {
     
-    
-    for i in 1...n {
-        
-        if i % 3 == 0 && i % 5 != 0 {
-            
-            print("Fizz")
-            
-        }else if i % 5 == 0 && i % 3 != 0 {
-            
-            print("Buzz")
-            
-        }else if i % 5 == 0 && i % 3 == 0 {
-            
-            print("FizzBuzz")
-        }else{
-            
-            print(i)
-            
-        }
-        
-        
-        
+    if n % 3 == 0 && n % 5 != 0 {
+        return .fizz
+    } else if n % 5 == 0 && n % 3 != 0 {
+        return .buzz
+    } else if n % 5 == 0 && n % 3 == 0 {
+        return .fizzBuzz
+    } else {
+        return (Answer.number(n))
     }
-    
-    
-    //    for i in 1...n{
-    //
-    //        switch i {
-    //        case _ where i % 3 == 0 && i % 5 != 0:
-    //            print("Fizz")
-    //
-    //        case _ where i % 5 == 0 && i % 3 != 0:
-    //             print("Buzz")
-    //
-    //        case _ where i % 5 == 0 && i % 3 == 0:
-    //            print("FizzBuzz")
-    //        default:
-    //
-    //            print(i)
-    //        }
-    //
-    //
-    //
-    //    }
-    
-    
     return Answer.number(n)
 }
 
 
-transform(n: 60)
+print(transform(n: 7))
+print(transform(n: 5))
+print(transform(n: 3))
+print(transform(n: 15))
 
 
-var vowels = "aeiouAEIOU"
-var counter = 0
 
 func letsDoThis(input: String) -> String{
-    
+    var vowels = "aeiouAEIOU"
+    var counter = 0
     var newString: [Character] = []
     
     for i in input.characters {
@@ -114,12 +62,7 @@ func letsDoThis(input: String) -> String{
 
 
 
+
 print(letsDoThis(input: "cupcake"))
 print(letsDoThis(input: "bookkeeper"))
 print(letsDoThis(input: "Iron Yard"))
-
-
-
-
-
-
